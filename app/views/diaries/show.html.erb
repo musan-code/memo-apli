@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong class="id">ID:</strong>
+  <%= @diary.id %>
+</p>
+
+<p>
+  <strong class="title-new">タイトル：</strong>
+  <%= @diary.title %>
+</p>
+
+<p>
+  <strong class=body>本文:</strong>
+  <%= @diary.body %>
+</p>
+
+<p>
+  <strong class="day1">登録日時:</strong>
+  <%= @diary.created_at %>
+</p>
+
+<p>
+  <strong class="day2">更新日時:</strong>
+  <%= @diary.updated_at %>
+</p>
+
+<%= link_to '編集', edit_diary_path(@diary) %> |
+<%= link_to '削除', @diary, method: :delete, data: { confirm: '本当に削除しますか?' } %>
+<%= link_to '一覧に戻る', diaries_path %>

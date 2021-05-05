@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="title">日記一覧画面</h1>
+
+<table class="waku">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>登録日時</th>
+      <th>更新日時</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diaries.each do |diary| %>
+      <tr>
+        <td><%= diary.id %></td>
+        <td><%= link_to diary.title, diary %></td>
+        <td><%= diary.created_at %></td>
+        <td><%= diary.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%# ヘルパーメソッド link_to リンク名、リンク先 %>
+<%= link_to '日記を新規作成', new_diary_path %>
